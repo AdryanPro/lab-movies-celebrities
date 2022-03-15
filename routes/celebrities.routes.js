@@ -1,5 +1,6 @@
 // starter code in both routes/celebrities.routes.js and routes/movies.routes.js
 const router = require("express").Router();
+const async = require("hbs/lib/async");
 const mongoose = require("mongoose");
 const celebrities = require("../models/Celebrity.model");
 
@@ -17,9 +18,16 @@ router.post("/celebrities/create", async (req, res) => {
     res.render("celebrities/new-celebrity");
   }
 
-  //maybe add finally
-
   res.redirect("/");
 });
 
+router.get("/celebrities", async (req, res) => {
+  try {
+    const celebritiesDB = await celebrities.find();
+    console.log(celebritiesDB);
+    res.render("celebrities/celebrities", { celebritiesDB });
+  } catch (err) {
+    console.log("We got an error");
+  }
+});
 module.exports = router;
