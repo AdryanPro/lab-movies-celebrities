@@ -14,9 +14,7 @@ const movieSchema = new Schema({
     required: true,
     unique: true,
   },
-  cast: {
-    type: [Object], //the isse may be wityh this guy
-  },
+  cast: [{ type: Schema.Types.ObjectId, ref: "Celebrity" }],
 });
 
 const movieModel = model("model", movieSchema);
