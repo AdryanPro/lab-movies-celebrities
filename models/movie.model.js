@@ -17,6 +17,6 @@ const movieSchema = new Schema({
   cast: [{ type: Schema.Types.ObjectId, ref: "Celebrity" }],
 });
 
-const movieModel = model("model", movieSchema);
+const movieModel = model("movie", movieSchema);
 
 module.exports = movieModel;

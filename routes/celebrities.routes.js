@@ -25,6 +25,7 @@ router.get("/celebrities", async (req, res) => {
   try {
     const celebritiesDB = await celebrities.find();
     console.log(celebritiesDB);
+
     res.render("celebrities/celebrities", { celebritiesDB });
   } catch (err) {
     console.log("We got an error");
