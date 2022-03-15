@@ -1,17 +1,27 @@
 <h2>celebrities</h2>
 
 <form action="/celebrities/create" method="POST">
-  <input type="text" name="title" id="titleId" placeholder="Enter a title">
-  <input type="text" name="genre" id="genreId" placeholder="Enter a genre">
-  <input type="text" name="plot" id="plotId" placeholder="Enter a plot">
-  
-  <select name="cast" id="castId" multiple>
-    <option value="_id">Volvo</option>
-    <option value="_id">Saab</option>
-    <option value="_id">Opel</option>
-    <option value="_id">Audi</option>
-  </select>
 
+  <input
+    type="text"
+    name="name"
+    id="name-id"
+    placeholder="Enter Celebrities Name"
+  />
+
+  <input
+    type="text"
+    name="occupation"
+    id="occupation-id"
+    placeholder="Enter occupation"
+  />
+
+  <input
+    type="text"
+    name="catchPhrase"
+    id="catchPhrase-id"
+    placeholder="Enter catchPhrase"
+  />
 
   <button type="submit">Submit</button>
   {{! <button type="submit">Submit</button> }}
