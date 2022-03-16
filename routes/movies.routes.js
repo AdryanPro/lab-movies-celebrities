@@ -3,7 +3,7 @@ const router = require("express").Router();
 const { redirect } = require("express/lib/response");
 const async = require("hbs/lib/async");
 const mongoose = require("mongoose");
-const Movies = require("../models/movie.model");
+const Movies = require("../models/movie.model"); // Calling Model
 const celebrities = require("../models/Celebrity.model");
 
 // all your routes here
@@ -36,14 +36,14 @@ router.get("/movies", async (req, res) => {
   // res.redirect("/");
 });
 
-router.get("/movies/:id", async (req, res) => {
-  console.log(req.params);
+// router.get("/movies/:id", async (req, res) => {
+//   console.log(req.params);
 
-  const findId = Movies.findById(req.params.id);
+//   const findId = Movies.findById(req.params.id);
 
-  await findId.populate("name");
+//   await findId.populate("name");
 
-  res.render("movies/movie-details");
-});
+//   res.render("movies/movie-details");
+// });
 
 module.exports = router;

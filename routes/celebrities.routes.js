@@ -10,8 +10,7 @@ router.get("/celebrities/create", (req, res) => {
 
 router.post("/celebrities/create", async (req, res) => {
   try {
-    const newCelebrities = req.body;
-
+    const newCelebrities = req.body; // stroing the info inside newCelebrities
     await celebrities.create(newCelebrities);
   } catch (err) {
     console.log("There has been an error");
